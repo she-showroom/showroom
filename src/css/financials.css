@@ -1,0 +1,56 @@
+.svg-container {
+    height: 150px;
+    margin-top: -50px;
+}
+
+.card-sub > .title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    color: #1A1A1A;
+    padding-top: 20px;
+}
+
+.card-sub > .number {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 27px;
+    text-align: center;
+    margin-top: 8px;
+    color: #FAFAFA;
+}
+
+.blue-card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.blue-card-header > .image {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.blue-card-header > .image > img {
+    width: 170px;
+}
+
+.blue-card-header > .title-row {
+    display: flex;
+    font-size: 30px;
+    font-weight: bold;
+    color: #F0EBD8;
+    padding: 15px;
+}
+
+.blue-card-header > .title-row > div{
+    flex-grow: 1;
+}
+
+.blue-card-header > .title-row > img {
+    padding: 10px;
+}

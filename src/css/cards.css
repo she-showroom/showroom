@@ -1,0 +1,191 @@
+.card-display {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container {
+    flex-grow: 1;
+    width: 100%;
+    padding: 15px;
+    /*padding-top: 50px;*/
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+.card-action {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background: rgba(102, 102, 102, 0.08);
+    justify-content: center;
+}
+
+.card-action > div {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card-action > div.active {
+    background-color: rgba(102, 102, 102, 0.2);
+}
+
+.card.blue-background {
+    background: linear-gradient(180deg, #748CAB 0%, #3E5C76 100%);
+}
+
+.card-sub {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 30px 30px 0px 0px;
+    height: 100%;
+}
+
+.card > .content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow-y: hidden;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+.menu > .item {
+    font-size: 10px;
+    cursor: pointer;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 25%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu > .enabled {
+    color: #3E5C76;
+}
+
+.financials {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.financials .similar {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #748CAB;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #FAFAFA;
+}
+
+.financials > .filter {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.financials > .filter > input {
+    margin-right: 15px;
+    background: #F0EBD8;
+    border-radius: 5px;
+    border: none;
+    width: 130px;
+    height: 29px;
+}
+
+.list-container {
+    flex-grow: 1;
+}
+
+.list {
+
+    width: 100%;
+}
+
+.list th {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 27px;
+    /* or 208% */
+
+    text-align: center;
+
+    color: #FAFAFA;
+}
+
+.list .row {
+    height: 80px;
+    border-bottom: #0d0d0d;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.list .relevancy {
+    width: 80px;
+}
+
+.list .relevancy > div {
+    display: flex;
+    justify-content: center;
+}
+
+.rel-button {
+    display: flex;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    background: linear-gradient(180deg, #3E5C76 0%, #1D2D44 100%);
+    border-radius: 15px;
+    color: #FAFAFA;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 100px;
+    /* or 370% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.list .stage {
+    width: 120px;
+}
+
+.stage > div {
+    display: flex;
+}
+
+.stage > div > img {
+    padding-right: 10px;
+    padding-left: 8px;
+}
