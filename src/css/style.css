@@ -4,6 +4,7 @@ body, html {
     font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
     height: 100%;
     width: 100%;
+    overflow:hidden;
 }
 
 body > div {

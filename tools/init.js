@@ -2,7 +2,7 @@ const admin = require('firebase-admin');
 const {deleteCollection} = require("./util")
 const {data} = require("./data")
 
-let serviceAccount = require('./tester-235ac-ce7e783dad47.json');
+let serviceAccount = require('../firebase-admin.json');
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
