@@ -1,0 +1,203 @@
+.showroom-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.showroom {
+    padding: 15px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.showroom > .title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.showroom > .title > div {
+    flex-grow: 1;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+.showroom > .title > img {
+    cursor: pointer;
+}
+
+.showroom > .card-header {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.card-header-left {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.showroom > .card-header > .company-logo {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.company-logo > img {
+    border-radius: 100%;
+    width: 72px;
+    height: 72px;
+}
+
+.showroom > .focus {
+    display: flex;
+    width: 100%;
+}
+
+.showroom > .focus > div{
+    padding-right: 5px;
+}
+
+.sector {
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    padding-top: 5px;
+    font-size: 15px;
+    line-height: 27px;
+    height: 27px;
+}
+
+.summary {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    color: #0D0D0D;
+}
+
+.card-company-status > .card-header-tag {
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: rgba(240, 235, 216, 0.65);
+    font-size: 13px;
+    border-radius: 10px;
+    padding-top: 4px;
+    width: 165px;
+    height: 33px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.card-company-status {
+    display: flex;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 27px;
+    align-items: center;
+}
+
+.card-company-status > img {
+    display: flex;
+    align-items: center;
+    margin-left: 17px;
+}
+
+.card-company-status > .status {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    margin-left: 17px;
+}
+
+.card-company-status > .status > img {
+    margin-right: 5px;
+}
+
+.card-flag {
+    margin-top: 7px;
+}
+
+.card-company-status > span {
+    margin-left: 10px;
+}
+
+/* TILES */
+.tile-value {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 100px;
+}
+
+.tile-icon-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.tile-iconrow {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.tile-iconrow.multiline {
+    align-items: flex-start;
+}
+
+.tile-iconrow > .icon {
+    width: 20px;
+    flex-shrink: 0;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.tile-iconrow > .text {
+    width: 100px;
+    font-size: 13px;
+}
+
+.tileslist {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 12px;
+    justify-content: space-around;
+}
+
+.tile {
+    box-sizing: border-box;
+    border: 2px solid #748CAB;
+    width: 140px;
+    height: 140px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.tile-title-value {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+
+

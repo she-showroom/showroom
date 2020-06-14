@@ -18,7 +18,9 @@ type alias Card =
     , award3 : Maybe String
     , industry : Maybe String
     , description : Maybe String
+    , checklist : List String
     , id : Maybe String
+    , focus : Maybe String
     }
 
 
@@ -40,7 +42,9 @@ defaultCard =
     , award3 = Nothing
     , industry = Nothing
     , description = Nothing
+    , checklist = []
     , id = Nothing
+    , focus = Nothing
     }
 
 

@@ -81,17 +81,14 @@ init _ url key =
 stateFromUrl : String -> ( State, Cmd msg )
 stateFromUrl url =
     case url of
-        "/login" ->
-            ( LoginScreen, Cmd.none )
-
-        "/company" ->
-            ( Loading, getCards () )
-
-        "/register" ->
-            ( RegistrationScreen newRegistration, Cmd.none )
-
+        --"/login" ->
+        --    ( LoginScreen, Cmd.none )
+        --"/company" ->
+        --    ( Loading, getCards () )
+        --"/register" ->
+        --    ( RegistrationScreen newRegistration, Cmd.none )
         _ ->
-            ( LoginScreen, Cmd.none )
+            ( Loading, getCards () )
 
 
 titleFromState : State -> String

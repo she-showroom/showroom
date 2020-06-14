@@ -22,47 +22,55 @@ renderShowroom card model =
                 Just s ->
                     s == state
     in
-    div [ class "content" ]
-        [ div [ class "title" ]
-            [ img [ class "navigate-left", src "img/left.svg", onClick PreviousCard ] []
-            , div [ class "card-company-name" ] [ text <| Maybe.withDefault "No name" card.name ]
-            , img [ class "navigate-right", src "img/right.svg", onClick NextCard ] []
-            ]
-        , div [ class "card-header" ]
-            [ div [ class "card-header-left" ]
-                [ div [ class "tag-country-group" ]
-                    [ div [ class "card-header-tag" ] [ text <| Maybe.withDefault "No goal specified" card.goal ]
+    div [ class "showroom-container" ]
+        [ div [ class "showroom" ]
+            [ div [ class "title" ]
+                [ img [ class "navigate-left", src "img/left.svg", onClick PreviousCard ] []
+                , div [ class "card-company-name" ] [ text <| Maybe.withDefault "No name" card.name ]
+                , img [ class "navigate-right", src "img/right.svg", onClick NextCard ] []
+                ]
+            , div [ class "card-header" ]
+                [ div [ class "card-header-left" ]
+                    [ div [ class "sector" ] [ text <| Maybe.withDefault "Industry not specified" card.industry ]
+                    , div [ class "summary" ] [ text <| Maybe.withDefault "No description" card.description ]
                     ]
-                , div [ class "card-company-status" ]
-                    [ div [ class "card-flag" ] [ imageForCountry card.country ]
-                    , img [ src "img/project.svg" ] []
+                , div [ class "company-logo" ]
+                    [ img [ src "img/checker.png" ] [] ]
+                ]
+            , div [ class "focus" ]
+                [ div [ style "font-weight" "bold" ] [ text "Innovation focus: " ]
+                , div [] [ text <| Maybe.withDefault "Unknown" card.focus ]
+                ]
+            , div [ class "card-company-status" ]
+                [ div [ class "card-flag" ] [ imageForCountry card.country ]
+                , div [ class "status" ]
+                    [ img [ src "img/project.svg" ] []
                     , span [] [ text <| Maybe.withDefault "No stage specified" card.stage ]
                     ]
+                , div [ class "card-header-tag" ] [ text <| Maybe.withDefault "No goal specified" card.goal ]
                 ]
-            , div [ class "company-logo" ]
-                [ img [] [] ]
+            , div [ class "tileslist" ]
+                [ div
+                    [ class "tile-title-value"
+                    , class "tile"
+                    , class <| "relevancy-" ++ (String.fromInt <| Maybe.withDefault 50 card.relevancy)
+                    ]
+                    [ div [ class "tile-title" ] [ text "Relevancy" ]
+                    , div [ class "tile-value" ] [ text <| (String.fromInt <| Maybe.withDefault 50 card.relevancy) ]
+                    ]
+                , tileForChecklist card
+
+                --, div [ class "tile-title-value", class "tile" ]
+                --    [ div [ class "tile-title" ] [ text "Diversity %" ]
+                --    , div [ class "tile-value", style "color" <| opennessColor <| Maybe.withDefault 2 card.openness ]
+                --        [ text <| String.fromInt <| Maybe.withDefault 2 card.openness ]
+                --    ]
+                ]
+            , div [ class "tileslist" ]
+                [ tileForFinancials card
+                , tileForAchievements card
+                ]
             ]
-        , div [ class "tileslist" ]
-            [ div
-                [ class "tile-title-value"
-                , class "tile"
-                , class <| "relevancy-" ++ (String.fromInt <| Maybe.withDefault 50 card.relevancy)
-                ]
-                [ div [ class "tile-title" ] [ text "Relevancy" ]
-                , div [ class "tile-value" ] [ text <| (String.fromInt <| Maybe.withDefault 50 card.relevancy) ]
-                ]
-            , div [ class "tile-title-value", class "tile" ]
-                [ div [ class "tile-title" ] [ text "Diversity %" ]
-                , div [ class "tile-value", style "color" <| opennessColor <| Maybe.withDefault 2 card.openness ]
-                    [ text <| String.fromInt <| Maybe.withDefault 2 card.openness ]
-                ]
-            ]
-        , div [ class "tileslist" ]
-            [ tileForFinancials card
-            , tileForAchievements card
-            ]
-        , div [ class "sector" ] [ text <| Maybe.withDefault "Industry not specified" card.industry ]
-        , div [ class "summary" ] [ text <| Maybe.withDefault "No description" card.description ]
         , div [ class "card-action" ]
             [ div
                 [ onClick DislikeCompany
@@ -98,9 +106,15 @@ imageForCountry _ =
     img [ src "img/DE.svg" ] []
 
 
+tileForChecklist : Card -> Html msg
+tileForChecklist card =
+    List.map (\check -> ( "img/check.svg", [ check ] )) card.checklist
+        |> iconTextToTile
+
+
 tileForFinancials : Card -> Html msg
 tileForFinancials card =
-    [ ( "img/tag.svg", [ Maybe.withDefault "Unknown" card.investor ] )
+    [ ( "img/tag.svg", [ Maybe.withDefault "Unknown" card.investor, "" ] )
     , ( "img/money.svg"
       , [ "Last funding"
         , Maybe.withDefault "Unknown" card.funding
@@ -128,7 +142,11 @@ iconTextToTile items =
             items
                 |> List.map
                     (\( icon, textContent ) ->
-                        div [ class "tile-iconrow" ]
+                        let
+                            isMultiline =
+                                List.length textContent > 1
+                        in
+                        div [ class "tile-iconrow", classList [ ( "multiline", isMultiline ) ] ]
                             [ img [ class "icon", src icon ] []
                             , div [ class "text" ]
                                 (List.map (\t -> div [] [ text t ]) textContent)
