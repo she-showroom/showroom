@@ -64,10 +64,10 @@ view model =
             [ content
             ]
         , div [ class "menu" ]
-            [ menuItemSelection Showroom "img/rocket.svg" "showroom"
-            , menuItemSelection Financials "img/money.svg" "financials"
-            , menuItemSelection Saved "img/network.svg" "my room"
-            , menuItemSelection Chat "img/chat.svg" "chat"
+            [ menuItemSelection Showroom "menu-showroom" "Showroom"
+            , menuItemSelection Financials "menu-financials" "Financials"
+            , menuItemSelection Saved "menu-similar" "Similar"
+            , menuItemSelection Chat "menu-chat" "Chat"
             ]
         ]
 
@@ -186,6 +186,6 @@ menuItem model state icon name =
             model.state == state
     in
     div [ class "item", classList [ ( "enabled", enabled ) ], onClick <| SetState state ]
-        [ img [ src icon ] []
+        [ div [ class "icon", class icon ] []
         , div [] [ text name ]
         ]

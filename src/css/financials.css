@@ -1,6 +1,6 @@
 .svg-container {
-    height: 150px;
-    margin-top: -50px;
+    /*height: 150px;*/
+    /*margin-top: -50px;*/
 }
 
 .card-sub > .title {
@@ -9,7 +9,9 @@
     font-size: 22px;
     line-height: 27px;
     color: #1A1A1A;
-    padding-top: 20px;
+    margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .card-sub > .number {
@@ -18,7 +20,7 @@
     font-size: 30px;
     line-height: 27px;
     text-align: center;
-    margin-top: 8px;
+    margin-top: 15px;
     color: #FAFAFA;
 }
 

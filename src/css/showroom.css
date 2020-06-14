@@ -8,16 +8,17 @@
     padding: 15px;
     flex-grow: 1;
     flex-shrink: 1;
+    overflow-y: scroll;
 }
 
-.showroom > .title {
+.showroom .title {
     display: flex;
     flex-direction: row;
     width: 100%;
     box-sizing: border-box;
 }
 
-.showroom > .title > div {
+.showroom .title > div {
     flex-grow: 1;
     text-align: center;
     font-style: normal;
@@ -26,11 +27,11 @@
     line-height: 22px;
 }
 
-.showroom > .title > img {
+.showroom .title > img {
     cursor: pointer;
 }
 
-.showroom > .card-header {
+.showroom .card-header {
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
@@ -42,7 +43,7 @@
     flex-grow: 1;
 }
 
-.showroom > .card-header > .company-logo {
+.showroom .card-header > .company-logo {
     flex-grow: 0;
     flex-shrink: 0;
 }
@@ -53,12 +54,12 @@
     height: 72px;
 }
 
-.showroom > .focus {
+.showroom .focus {
     display: flex;
     width: 100%;
 }
 
-.showroom > .focus > div{
+.showroom .focus > div{
     padding-right: 5px;
 }
 

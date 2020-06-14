@@ -63,14 +63,16 @@ renderSaved card model =
         div [ class "card-sub" ]
             [ div [ class "financials" ]
                 [ div [ class "filter" ]
-                    [ input [] [] ]
+                    [ div [ class "input" ]
+                        [ div [] [ text "Filter" ], img [ src "img/search.svg" ] [] ]
+                    ]
                 , div [ class "list-container" ]
                     [ table [ class "list" ]
                         (tr [ class "titles" ]
-                            [ th [] [ text "Relevancy" ]
+                            [ th [] []
+                            , th [] [ text "Relevancy" ]
                             , th [] [ text "Stage" ]
                             , th [] [ text "Name" ]
-                            , th [] []
                             ]
                             :: (saved model |> List.map renderRow)
                         )
@@ -83,14 +85,14 @@ renderSaved card model =
 renderRow : ( CompanySaveType, Card ) -> Html msg
 renderRow ( saveType, card ) =
     tr [ class "row" ]
-        [ td [ class "relevancy" ]
+        [ td [ class "img-save" ] [ imgForSaveType saveType ]
+        , td [ class "relevancy" ]
             [ div [] [ div [ class "rel-button" ] [ text <| String.fromInt (Maybe.withDefault 0 card.relevancy) ] ] ]
         , td [ class "stage" ]
             [ div []
                 [ img [ src "img/project.svg" ] [], text (Maybe.withDefault "" card.stage) ]
             ]
         , td [ class "name" ] [ text (Maybe.withDefault "" card.name) ]
-        , td [ class "img-save" ] [ imgForSaveType saveType ]
         ]
 
 
