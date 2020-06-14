@@ -23,7 +23,7 @@ renderFinancials card =
 
 svgPlot =
     div [ class "svg-container" ]
-        [ svg [ width "100%", height "200px", viewBox "0 0 300 150", fontSize "10px" ]
+        [ svg [ viewBox "0 0 300 170", fontSize "10px" ]
             [ polyline
                 [ fill "none"
                 , stroke "#F0EBD8"
