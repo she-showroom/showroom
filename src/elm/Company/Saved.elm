@@ -4,7 +4,7 @@ import Array exposing (Array)
 import Company.Model exposing (CompanySaveType(..), Model)
 import Company.Util exposing (cardHeader)
 import Dict exposing (Dict)
-import Html exposing (Html, div, img, input, table, td, text, th, tr)
+import Html exposing (Html, div, img, table, td, text, th, tr)
 import Html.Attributes exposing (class, src)
 import Model exposing (Card)
 
@@ -58,7 +58,7 @@ getMatchingCompanySaveType dict key =
 
 
 renderSaved : Card -> Model -> Html msg
-renderSaved card model =
+renderSaved _ model =
     cardHeader "Saved Projects" <|
         div [ class "card-sub" ]
             [ div [ class "financials" ]

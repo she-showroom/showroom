@@ -1,11 +1,11 @@
 module Company.Financials exposing (..)
 
 import Company.Util exposing (cardHeader)
-import Html exposing (Html, div, img, text)
-import Html.Attributes exposing (class, src)
+import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
 import Model exposing (Card)
 import Svg exposing (line, polyline, svg, text_)
-import Svg.Attributes exposing (d, fill, fontSize, fontWeight, height, points, stroke, strokeWidth, viewBox, width, x, x1, x2, y, y1, y2)
+import Svg.Attributes exposing (fill, fontSize, fontWeight, height, points, stroke, strokeWidth, viewBox, width, x, x1, x2, y, y1, y2)
 
 
 renderFinancials : Card -> Html msg

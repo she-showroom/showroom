@@ -1,7 +1,6 @@
 module Company.Showroom exposing (..)
 
 import Array
-import Color exposing (rgb, toCssString)
 import Company.Model exposing (CompanySaveType(..), Model, Msg(..))
 import Dict
 import Html exposing (Html, div, img, span, text)
@@ -60,12 +59,6 @@ renderShowroom card model =
                         , div [ class "tile-value" ] [ text <| (String.fromInt <| Maybe.withDefault 50 card.relevancy) ]
                         ]
                     , tileForChecklist card
-
-                    --, div [ class "tile-title-value", class "tile" ]
-                    --    [ div [ class "tile-title" ] [ text "Diversity %" ]
-                    --    , div [ class "tile-value", style "color" <| opennessColor <| Maybe.withDefault 2 card.openness ]
-                    --        [ text <| String.fromInt <| Maybe.withDefault 2 card.openness ]
-                    --    ]
                     ]
                 , div [ class "tileslist" ]
                     [ tileForFinancials card
@@ -156,48 +149,3 @@ iconTextToTile items =
                     )
     in
     div [ class "tile-icon-text", class "tile" ] content
-
-
-deltaR =
-    1.45
-
-
-deltaG =
-    1.58
-
-
-deltaB =
-    1.71
-
-
-baseR =
-    145.0
-
-
-baseG =
-    172.0
-
-
-baseB =
-    205.0
-
-
-opennessColor : Int -> String
-opennessColor value =
-    let
-        vf =
-            toFloat value
-
-        r =
-            (baseR - vf * deltaR) / 255
-
-        g =
-            (baseG - vf * deltaG) / 255
-
-        b =
-            (baseB - vf * deltaB) / 255
-
-        color =
-            rgb r g b
-    in
-    toCssString color

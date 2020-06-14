@@ -8,7 +8,7 @@ import Company.Model exposing (Msg(..))
 import Html exposing (div, text)
 import LoginScreen
 import Model exposing (Card)
-import Registration exposing (Msg(..), newRegistration)
+import Registration exposing (Msg(..))
 import Swiper
 import Url exposing (Url)
 
@@ -31,13 +31,6 @@ type alias SaveResult =
 port cardSaved : (SaveResult -> msg) -> Sub msg
 
 
-
--- type alias Country =
---     { name : String
---     , flag : String
---     }
-
-
 type State
     = LoginScreen
     | Loading
@@ -57,7 +50,6 @@ type alias Model =
 type Msg
     = NewCards (Array Card)
     | Swiped Swiper.SwipeEvent
-      -- | SwitchToPage State
     | ChangeUrl Url
     | ClickLink UrlRequest
     | RegistrationMessage Registration.Msg
@@ -121,21 +113,6 @@ view model =
 
                 Cards card ->
                     Html.map CardMessage <| CardDisplay.view card
-
-            --let
-            --    (state, cmd) = CardDisplay.update card
-            --let
-            --    displayCard =
-            --        Array.get card model.cards
-            --in
-            --case displayCard of
-            --    Nothing ->
-            --        div [] [ text "Error" ]
-            --
-            --    Just c ->
-            --        renderCard c
-            -- NoCards ->
-            --     div [] [ text "No cards available" ]
             ]
         ]
     }
@@ -200,11 +177,7 @@ update msg model =
             in
             ( { model | state = newState }, Cmd.batch <| cmd :: saveCmd )
 
-        CardSaved result ->
-            --let
-            --    _ =
-            --        Debug.log "Saved" <| Debug.toString result
-            --in
+        CardSaved _ ->
             ( model, Nav.load "/" )
 
         ChangeUrl url ->
@@ -226,19 +199,6 @@ update msg model =
                 External url ->
                     ( model, Nav.load url )
 
-        -- SwitchToPage state ->
-        --     let
-        --         newModel =
-        --             { model | state = state }
-        --         cmd =
-        --             if state == Loading then
-        --                 getCards ()
-        --             else
-        --                 Cmd.none
-        --         cmdList =
-        --             [ cmd, Nav.pushUrl model.key <| urlForPage state ]
-        --     in
-        --     ( newModel, Cmd.batch cmdList )
         Swiped evt ->
             case model.state of
                 Cards cards ->

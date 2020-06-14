@@ -8,31 +8,24 @@
     "build": "rm -rf public && mkdir public && cp -r src/img public/img && parcel build --no-source-maps src/index.html -d public",
     "host": "firebase serve",
     "deploy": "firebase deploy",
+    "init": "node tools/init.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tilmans/she.git"
+    "url": "git+https://github.com/she-showroom/showroom.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tilmans/she/issues"
-  },
-  "homepage": "https://github.com/tilmans/she#readme",
+  "homepage": "https://showroom.gallery",
   "dependencies": {
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
     "firebase": "^7.14.6",
-    "firebase-tools": "^8.4.1",
-    "page": "^1.11.6",
-    "parcel-bundler": "^1.12.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "typescript": "^3.9.3"
+    "firebase-tools": "^8.4.1"
   },
   "devDependencies": {
     "elm-hot": "^1.1.4",
-    "node-elm-compiler": "^5.0.4"
+    "node-elm-compiler": "^5.0.4",
+    "parcel-bundler": "^1.12.4",
+    "firebase-admin": "^8.12.1"
   }
 }

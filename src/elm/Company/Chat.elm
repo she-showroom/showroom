@@ -5,12 +5,10 @@ import Company.Util exposing (cardHeader)
 import Html exposing (Html, div, img, text)
 import Html.Attributes exposing (class, src)
 import Model exposing (Card)
-import Svg exposing (line, polyline, svg)
-import Svg.Attributes exposing (d, fill, height, points, stroke, strokeWidth, viewBox, width)
 
 
 renderChat : Card -> Model -> Html msg
-renderChat card model =
+renderChat card _ =
     cardHeader (Maybe.withDefault "No Name" card.name) <|
         div [ class "card-sub" ]
             [ div [ class "chat-container" ]

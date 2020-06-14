@@ -1,15 +1,14 @@
 module Company.CardDisplay exposing (..)
 
 import Array exposing (Array)
-import Color exposing (rgb, toCssString)
 import Company.Chat exposing (renderChat)
 import Company.Financials exposing (renderFinancials)
 import Company.Model exposing (CompanySaveType(..), Model, Msg(..), State(..))
 import Company.Saved exposing (renderSaved)
 import Company.Showroom exposing (renderShowroom)
 import Dict exposing (Dict)
-import Html exposing (Html, div, img, span, text)
-import Html.Attributes exposing (class, classList, src, style)
+import Html exposing (Html, div, text)
+import Html.Attributes exposing (class, classList)
 import Html.Events exposing (onClick)
 import Model exposing (Card)
 
@@ -118,22 +117,6 @@ saveSaveForId dict value id =
     Dict.insert id value dict
 
 
-
---getStateForCompany : Int -> Array Card -> List CompanySave -> Maybe CompanySaveType
---getStateForCompany selection cards saves =
---    Array.get selection cards
---        |> Maybe.andThen .id
---        |> Maybe.andThen (companySaveForId saves)
---
---
---companySaveForId : List CompanySave -> String -> Maybe CompanySaveType
---companySaveForId saves id =
---    saves
---        |> List.filter (\s -> s.id == id)
---        |> List.head
---        |> Maybe.map .saveResult
-
-
 previousCard : Int -> Array Card -> Int
 previousCard card cards =
     if card == 0 then
@@ -150,33 +133,6 @@ nextCard card cards =
 
     else
         card + 1
-
-
-isShowroom model =
-    case model.state of
-        Showroom ->
-            True
-
-        _ ->
-            False
-
-
-isFinancials model =
-    case model.state of
-        _ ->
-            False
-
-
-isSimilar model =
-    case model.state of
-        _ ->
-            False
-
-
-isChat model =
-    case model.state of
-        _ ->
-            False
 
 
 menuItem : Model -> State -> String -> String -> Html Msg
