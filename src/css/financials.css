@@ -29,16 +29,22 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .blue-card-header > .image {
-    padding-top: 50px;
+    width: 100%;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
+    height: 100px;
+    padding-top: 20px;
 }
 
 .blue-card-header > .image > img {
-    width: 170px;
+    width: 173px;
+    object-fit: contain;
+    height: auto;
 }
 
 .blue-card-header > .title-row {
