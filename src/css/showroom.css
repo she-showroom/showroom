@@ -129,11 +129,23 @@
 }
 
 /* TILES */
+.tile-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    /*line-height: 27px;*/
+}
+
 .tile-value {
     font-style: normal;
     font-weight: 500;
     font-size: 80px;
-    line-height: 100px;
+    padding-top: 10px;
+    line-height: 50px;
+}
+
+.tile-value > .base {
+    font-size: 30px;
 }
 
 .tile-icon-text {
@@ -191,13 +203,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.tile-title {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 27px;
 }
 
 

@@ -5,11 +5,16 @@ body, html {
     height: 100%;
     width: 100%;
     overflow:hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body > div {
     height: 100%;
-    /*max-width: 400px;*/
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
 }
 
 

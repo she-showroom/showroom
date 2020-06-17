@@ -15,8 +15,11 @@ renderChat card _ =
                 [ div [ class "chat" ]
                     [ div [ class "title" ] [ text "Founder name" ]
                     , div [ class "timebubble" ] [ text "TUE 14:48 PM" ]
-                    , chatrow "Hello?"
-                    , chatrow "This is Chat Room with your preferred company"
+                    , chatrow [ "Great connecting with you." ]
+                    , chatrow
+                        [ "Could I request for a demo?"
+                        , "We are looking to invest in COVID related problem-solving solutions."
+                        ]
                     ]
                 , div [ class "chat-input" ]
                     [ icon "plus"
@@ -36,5 +39,6 @@ icon file =
 chatrow content =
     div [ class "chatrow" ]
         [ img [ src "img/checker.png" ] []
-        , div [ class "bubble" ] [ text content ]
+        , div [ class "bubble" ]
+            (List.map (\t -> div [] [ text t ]) content)
         ]

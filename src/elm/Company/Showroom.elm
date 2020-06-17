@@ -56,7 +56,10 @@ renderShowroom card model =
                         , class <| "relevancy-" ++ (String.fromInt <| Maybe.withDefault 50 card.relevancy)
                         ]
                         [ div [ class "tile-title" ] [ text "Relevancy" ]
-                        , div [ class "tile-value" ] [ text <| (String.fromInt <| Maybe.withDefault 50 card.relevancy) ]
+                        , div [ class "tile-value" ]
+                            [ span [ class "value" ] [ text <| (String.fromInt <| Maybe.withDefault 50 card.relevancy) ]
+                            , span [ class "base" ] [ text "/5" ]
+                            ]
                         ]
                     , tileForChecklist card
                     ]

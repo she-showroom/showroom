@@ -6,10 +6,10 @@
 .card-sub > .title {
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
-    line-height: 27px;
+    font-size: 20px;
+    /*line-height: 2px;*/
     color: #1A1A1A;
-    margin-top: 20px;
+    margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -17,10 +17,10 @@
 .card-sub > .number {
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
-    line-height: 27px;
+    font-size: 22px;
+    /*line-height: 27px;*/
     text-align: center;
-    margin-top: 15px;
+    margin-top: 5px;
     color: #FAFAFA;
 }
 
@@ -61,4 +61,41 @@
 
 .blue-card-header > .title-row > img {
     padding: 10px;
+}
+
+.card-sub > .downarrow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card-sub > .downarrow > .box {
+    display: block;
+    width: 12px;
+    height: 12px;
+}
+
+.card-sub > .downarrow > .box > img {
+    justify-content: center;
+    object-fit: contain;
+    width: 12px;
+}
+
+.card-sub > .downarrow > .box > .tooltip {
+    position: relative;
+    z-index: 100;
+    width: 150px;
+    height: 45px;
+    border-radius: 20px;
+    padding: 15px 15px 10px 10px;
+    text-align: center;
+    left: -80px;
+    top: -100px;
+    background-color: rgba(116,141,172,0.8);
+    display: none;
+}
+
+.card-sub > .downarrow > .box:hover > .tooltip {
+    display: block;
 }
